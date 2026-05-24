@@ -16,6 +16,8 @@ extends CharacterBody2D
 @export var tired_text_color: Color = Color(0.6, 0.6, 0.6) 
 @export var tired_font_size: int = 14
 
+var work_done : bool = true
+ 
 func _physics_process(delta: float) -> void:
 	# 1. APLICA A GRAVIDADE
 	if not is_on_floor():

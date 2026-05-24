@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://bk8d3cinavvjv"]
+
+[ext_resource type="PackedScene" uid="uid://bn8gtjh2t7yds" path="res://entities/JulioNight/player.tscn" id="1_1rqec"]
+[ext_resource type="PackedScene" uid="uid://yo7ghx1njekx" path="res://Test/platform.tscn" id="2_b68cj"]
+[ext_resource type="PackedScene" uid="uid://7rejwhupagct" path="res://night/Collectable.tscn" id="3_mt4cf"]
+[ext_resource type="Texture2D" uid="uid://d34v0jixype7n" path="res://icon.svg" id="4_jro1w"]
+[ext_resource type="PackedScene" uid="uid://7dpsd6xffu7f" path="res://entities/enemies/Monster1/jumper.tscn" id="5_b68cj"]
+[ext_resource type="PackedScene" uid="uid://dw3sln8aa6uj2" path="res://entities/enemies/Monster3/phantom.tscn" id="5_jro1w"]
+[ext_resource type="PackedScene" uid="uid://c8ifa2tx1h53" path="res://entities/enemies/Monster2/mouth.tscn" id="7_j1myf"]
+
+[node name="Dream" type="Node2D" unique_id=626537385]
+
+[node name="Background" type="TextureRect" parent="." unique_id=962365773]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TileMap" type="TileMapLayer" parent="." unique_id=1987500882]
+
+[node name="Player" parent="." unique_id=1153585672 instance=ExtResource("1_1rqec")]
+position = Vector2(43, 110)
+
+[node name="DreamHUD" type="CanvasLayer" parent="." unique_id=2118196208]
+
+[node name="FadeScreen" type="CanvasLayer" parent="." unique_id=556406980]
+
+[node name="Platform" parent="." unique_id=2145184235 instance=ExtResource("2_b68cj")]
+position = Vector2(0, 616)
+scale = Vector2(50, 1)
+
+[node name="Collectable" parent="." unique_id=2102626345 instance=ExtResource("3_mt4cf")]
+position = Vector2(429, 567)
+scale = Vector2(0.4, 0.4)
+memory_id = "Carrinho"
+description = "Ele quebrou meu carrinho de brinquedo..."
+memory_icon = ExtResource("4_jro1w")
+
+[node name="Collectable2" parent="." unique_id=1850493585 instance=ExtResource("3_mt4cf")]
+position = Vector2(-386, 566)
+scale = Vector2(0.4, 0.4)
+memory_id = "Carta de Amor"
+description = "Ela rasgou minha carta de amor..."
+memory_icon = ExtResource("4_jro1w")
+
+[node name="Collectable3" parent="." unique_id=1784349753 instance=ExtResource("3_mt4cf")]
+position = Vector2(-217, 549)
+memory_id = "Livro de Figurinhas"
+description = "Eles rasgaram minhas figurinhas"
+
+[node name="Collectable4" parent="." unique_id=2084597834 instance=ExtResource("3_mt4cf")]
+position = Vector2(181, 535)
+memory_id = "MemoriaA"
+description = "AA"
+active_night = 2
+
+[node name="Collectable5" parent="." unique_id=1500076848 instance=ExtResource("3_mt4cf")]
+position = Vector2(347, 540)
+memory_id = "MemoriaC"
+description = "CC"
+active_night = 2
+
+[node name="Collectable7" parent="." unique_id=867845032 instance=ExtResource("3_mt4cf")]
+position = Vector2(347, 540)
+memory_id = "MemoriaC"
+description = "CC"
+active_night = 2
+
+[node name="Collectable6" parent="." unique_id=221093310 instance=ExtResource("3_mt4cf")]
+position = Vector2(261, 536)
+memory_id = "MemoriaB"
+description = "BB"
+active_night = 2
+
+[node name="Collectable8" parent="." unique_id=1968682223 instance=ExtResource("3_mt4cf")]
+position = Vector2(-124, 544)
+memory_id = "MemoriaB"
+description = "31"
+active_night = 3
+
+[node name="Collectable9" parent="." unique_id=1542452772 instance=ExtResource("3_mt4cf")]
+position = Vector2(-182, 545)
+memory_id = "MemoriaB"
+description = "32"
+active_night = 3
+
+[node name="Collectable10" parent="." unique_id=491931421 instance=ExtResource("3_mt4cf")]
+position = Vector2(-288, 551)
+memory_id = "MemoriaB"
+description = "33"
+active_night = 3
+
+[node name="Enemies_Phantom" type="Node" parent="." unique_id=259408661]
+
+[node name="Phantom" parent="Enemies_Phantom" unique_id=300325181 instance=ExtResource("5_jro1w")]
+position = Vector2(-429, 198)
+active_day = 3
+
+[node name="Phantom3" parent="Enemies_Phantom" unique_id=404663 instance=ExtResource("5_jro1w")]
+position = Vector2(-429, 198)
+active_day = 3
+
+[node name="Phantom2" parent="Enemies_Phantom" unique_id=972603361 instance=ExtResource("5_jro1w")]
+position = Vector2(-429, 198)
+
+[node name="Enemies_Jumpers" type="Node" parent="." unique_id=79120197]
+
+[node name="Jumper" parent="Enemies_Jumpers" unique_id=1992110024 instance=ExtResource("5_b68cj")]
+position = Vector2(716, 479)
+
+[node name="Jumper2" parent="Enemies_Jumpers" unique_id=279405626 instance=ExtResource("5_b68cj")]
+position = Vector2(712, 426)
+active_day = 2
+
+[node name="Jumper3" parent="Enemies_Jumpers" unique_id=1647976534 instance=ExtResource("5_b68cj")]
+position = Vector2(746, 426)
+active_day = 2
+
+[node name="Jumper4" parent="Enemies_Jumpers" unique_id=611561932 instance=ExtResource("5_b68cj")]
+position = Vector2(709, 383)
+active_day = 3
+
+[node name="Jumper5" parent="Enemies_Jumpers" unique_id=1151354085 instance=ExtResource("5_b68cj")]
+position = Vector2(749, 381)
+active_day = 3
+
+[node name="Jumper6" parent="Enemies_Jumpers" unique_id=135689945 instance=ExtResource("5_b68cj")]
+position = Vector2(801, 376)
+active_day = 3
+
+[node name="Enemies_Mouth" type="Node" parent="Enemies_Jumpers" unique_id=246176119]
+
+[node name="Mouth" parent="Enemies_Jumpers/Enemies_Mouth" unique_id=123984643 instance=ExtResource("7_j1myf")]
+position = Vector2(634, 446)
+active_day = 2

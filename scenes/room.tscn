@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cdlkna730ogxl"]
+
+[ext_resource type="PackedScene" uid="uid://nuid0to473qf" path="res://day/item.tscn" id="1_jxe34"]
+[ext_resource type="PackedScene" uid="uid://bxhny66uudb6h" path="res://entities/JulioDay/PlayerDay.tscn" id="2_jn645"]
+[ext_resource type="PackedScene" uid="uid://yo7ghx1njekx" path="res://Test/platform.tscn" id="3_qvc4m"]
+[ext_resource type="Script" uid="uid://b8p8fufekpe55" path="res://day/passaODia.gd" id="4_7dqbv"]
+[ext_resource type="PackedScene" uid="uid://dmjgwmyekqrcx" path="res://day/Bed.tscn" id="5_ybpoa"]
+
+[node name="Room" type="Node2D" unique_id=1541954128]
+
+[node name="Background" type="TextureRect" parent="." unique_id=210541054]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DialogueBox" type="CanvasLayer" parent="." unique_id=62904984]
+
+[node name="BedTrigger" type="Node2D" parent="." unique_id=1366546699]
+
+[node name="FadeScreen" type="CanvasLayer" parent="." unique_id=1068751288]
+
+[node name="Item3" parent="." unique_id=531312036 instance=ExtResource("1_jxe34")]
+position = Vector2(485, 277)
+active_day = 3
+interaction_message = "Dia 3..."
+
+[node name="Item2" parent="." unique_id=1142865970 instance=ExtResource("1_jxe34")]
+position = Vector2(392, 280)
+active_day = 2
+interaction_message = "Dia 2..."
+
+[node name="Item" parent="." unique_id=1512813397 instance=ExtResource("1_jxe34")]
+position = Vector2(304, 281)
+interaction_message = "Mais um dia..."
+
+[node name="PlayerDay" parent="." unique_id=64091671 instance=ExtResource("2_jn645")]
+position = Vector2(107, 240)
+
+[node name="Platform" parent="." unique_id=2145184235 instance=ExtResource("3_qvc4m")]
+position = Vector2(13, 347)
+scale = Vector2(400, 1)
+
+[node name="Button" type="Button" parent="." unique_id=1028628168]
+offset_left = 255.0
+offset_top = 68.0
+offset_right = 607.0
+offset_bottom = 196.0
+script = ExtResource("4_7dqbv")
+
+[node name="Bed" parent="." unique_id=655202519 instance=ExtResource("5_ybpoa")]
+position = Vector2(615, 298)
+
+[connection signal="button_up" from="Button" to="Button" method="_on_button_up"]

@@ -3,8 +3,10 @@ extends Area2D
 # ==========================================
 # CONFIGURAÇÕES DA MEMÓRIA
 # ==========================================
+@export_group("Configurações da História")
 @export var memory_id: String = "memoria_1"
 @export var description: String = "..."
+@export var active_night: int = 1
 
 @export_group("Visual")
 @export var memory_icon: Texture2D 
@@ -24,6 +26,15 @@ var is_collected: bool = false
 # INICIALIZAÇÃO
 # ==========================================
 func _ready() -> void:
+	# -------------------------------------------------------------
+	# MUDANÇA AQUI: Filtro de Aparição!
+	# Se o dia atual do jogo for diferente da noite configurada 
+	# para este item, ele se destrói instantaneamente.
+	# -------------------------------------------------------------
+	if GameManager.current_day != active_night:
+		queue_free()
+		return
+		
 	if memory_icon and texture_rect:
 		texture_rect.texture = memory_icon
 		
@@ -43,7 +54,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		is_collected = true
 		
-		# MUDANÇA AQUI: Agora a memória é injetada diretamente no Player (body)
+		# A memória é injetada diretamente no Player (body)
 		if body.has_method("collect_memory"):
 			body.collect_memory(memory_id)
 		else:
@@ -52,9 +63,7 @@ func _on_body_entered(body: Node2D) -> void:
 		if has_node("CollisionShape2D"):
 			$CollisionShape2D.set_deferred("disabled", true)
 			
-		# ------------------------------------------------------------------
-		# TEXTO FLUTUANTE (SEGUE O JOGADOR)
-		# ------------------------------------------------------------------
+		# TEXTO FLUTUANTE
 		var popup_label = Label.new()
 		popup_label.text = description
 		
@@ -65,17 +74,13 @@ func _on_body_entered(body: Node2D) -> void:
 		popup_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 		popup_label.grow_horizontal = Control.GROW_DIRECTION_BOTH
 		
-		# O texto vira filho do Player (body) para seguir ele
 		body.add_child(popup_label)
-		
 		popup_label.position = Vector2(text_offset_x, -text_offset_y)
 		
-		# Animação do texto subindo
 		var text_tween = popup_label.create_tween()
 		text_tween.tween_property(popup_label, "position:y", popup_label.position.y - 60.0, 2.0).set_ease(Tween.EASE_OUT)
 		text_tween.parallel().tween_property(popup_label, "modulate:a", 0.0, 2.0).set_ease(Tween.EASE_IN)
 		text_tween.tween_callback(popup_label.queue_free)
-		# ------------------------------------------------------------------
 			
 		# Animação do item sumindo
 		var tween = create_tween()

@@ -7,20 +7,11 @@ enum Phase { DAY, NIGHT }
 var current_phase: Phase = Phase.DAY
 var current_day: int = 1
 
-#1Morning.tscn
-#1Night.tscn
-#2Morning.tscn
-#2Night.tscn
-#3Morning.tscn
-#3Night.tscn
-#Créditos
-#TitleScreen
-
 # ─── Caminhos das cenas ──────────────────────────────────
-# Mude este caminho se as suas cenas estiverem dentro de alguma pasta (ex: "res://Scenes/")
-const BASE_SCENE_PATH: String = "res://scenes"
+const BASE_SCENE_PATH: String = "res://scenes/"
 
-# Nomes exatos das telas avulsas
+const SCENE_DAY     = "room.tscn"
+const SCENE_NIGHT   = "dream.tscn"
 const SCENE_TITLE   = "TitleScreen.tscn"
 const SCENE_CREDITS = "Creditos.tscn"
 
@@ -28,7 +19,7 @@ const SCENE_CREDITS = "Creditos.tscn"
 signal phase_changed(new_phase: Phase)
 signal day_changed(new_day: int)
 
-# ─── Começar o jogo (Chamado pelo botão Play da Title Screen) 
+# ─── Começar o jogo ──────────────────────────────────────
 func start_game() -> void:
 	current_day = 1
 	current_phase = Phase.DAY
@@ -38,8 +29,6 @@ func start_game() -> void:
 func go_to_sleep() -> void:
 	current_phase = Phase.NIGHT
 	phase_changed.emit(current_phase)
-	
-	# Vai para [Dia]Night.tscn
 	_load_current_phase_scene()
 
 # ─── Transição de Noite > Próximo Dia ───────────────────
@@ -54,13 +43,13 @@ func wake_up() -> void:
 	day_changed.emit(current_day)
 	phase_changed.emit(current_phase)
 	
-	# Vai para [Novo Dia]Morning.tscn
 	_load_current_phase_scene()
 
-# ─── Lógica inteligente de carregamento ─────────────────
+# ─── Lógica de carregamento fixo ────────────────────────
 func _load_current_phase_scene() -> void:
-	var phase_string = "Morning" if current_phase == Phase.DAY else "Night"
-	var final_path = BASE_SCENE_PATH + str(current_day) + phase_string + ".tscn"
+	# Agora ele só escolhe entre room.tscn e dream.tscn
+	var target_scene = SCENE_DAY if current_phase == Phase.DAY else SCENE_NIGHT
+	var final_path = BASE_SCENE_PATH + target_scene
 	
 	_change_scene(final_path)
 

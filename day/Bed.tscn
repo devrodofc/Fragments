@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dmjgwmyekqrcx"]
+
+[ext_resource type="Script" uid="uid://dr7438s2ai2rh" path="res://day/bed.gd" id="1_cg6ud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uake"]
+
+[node name="Bed" type="Area2D" unique_id=655202519]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_cg6ud")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=76696938]
+shape = SubResource("RectangleShape2D_3uake")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1351540368]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0

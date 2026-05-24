@@ -3,6 +3,9 @@ extends Area2D
 # ==========================================
 # CONFIGURAÇÕES DO TEXTO E BOTÃO
 # ==========================================
+@export_group("Configurações da História")
+@export var active_day: int = 1
+
 @export_group("Textos")
 @export var prompt_text: String = "[E] Interagir"
 @export var interaction_message: String = "Interagindo com um item..."
@@ -27,6 +30,15 @@ var has_interacted: bool = false
 # INICIALIZAÇÃO
 # ==========================================
 func _ready() -> void:
+	# -------------------------------------------------------------
+	# MUDANÇA AQUI: Filtro de Aparição!
+	# Se o dia atual do jogo for diferente do dia configurado 
+	# para este item, ele se destrói instantaneamente.
+	# -------------------------------------------------------------
+	if GameManager.current_day != active_day:
+		queue_free()
+		return
+		
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 	

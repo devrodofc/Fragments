@@ -1,9 +1,16 @@
 class_name EnemyBase
 extends CharacterBody2D
 
+# ==========================================
+# CONFIGURAÇÕES DA HISTÓRIA / SPAWN
+# ==========================================
+@export_group("Configurações de Spawn")
+@export var active_day: int = 1
+
 @onready var hitbox: Area2D = get_node_or_null("Hitbox")
 @onready var color_rect: ColorRect = get_node_or_null("ColorRect")
 
+@export_group("Atributos do Inimigo")
 @export var color: Color = Color(1, 1, 1) # Branco por padrão
 @export var max_health: int = 1
 
@@ -14,9 +21,18 @@ var is_dead: bool = false
 # INICIALIZAÇÃO BASE
 # ==========================================
 func _ready() -> void:
+	# -------------------------------------------------------------
+	# FILTRO DE APARIÇÃO:
+	# Se o dia do GameManager não for o mesmo dia configurado 
+	# para este inimigo, ele não "nasce" (é deletado antes de aparecer).
+	# -------------------------------------------------------------
+	if GameManager.current_day != active_day:
+		queue_free()
+		return
+		
 	current_health = max_health
 	
-	# MUDANÇA AQUI: Aplica a cor ao ColorRect assim que o inimigo nasce
+	# Aplica a cor ao ColorRect assim que o inimigo nasce
 	if color_rect:
 		color_rect.color = color
 	else:
@@ -59,7 +75,6 @@ func take_damage(amount: int = 1) -> void:
 	current_health -= amount
 	
 	# Game Juice: Pisca em vermelho ao tomar dano
-	# (O modulate afeta todo o CharacterBody2D, incluindo o ColorRect, então funciona perfeitamente!)
 	modulate = Color(1, 0, 0)
 	var tween = create_tween()
 	tween.tween_property(self, "modulate", Color(1, 1, 1), 0.2)
@@ -74,13 +89,13 @@ func die() -> void:
 	if is_dead: return
 	
 	is_dead = true
-	set_physics_process(false)
+	set_physics_process(false) # Para de se mover/cair
 	
 	# Desabilita as colisões do corpo principal
 	if has_node("CollisionShape2D"):
 		$CollisionShape2D.set_deferred("disabled", true)
 		
-	# Desabilita as colisões da Hitbox (usando a variável que já temos)
+	# Desabilita as colisões da Hitbox
 	if hitbox and hitbox.has_node("CollisionShape2D"):
 		hitbox.get_node("CollisionShape2D").set_deferred("disabled", true)
 	

@@ -6,7 +6,7 @@ extends CharacterBody2D
 signal memory_collected(memory_id: String)
 
 # ==========================================
-# CONFIGURAÇÕES DE HISTÓRIA / MEMÓRIAS
+# CONFIGURAÇÕES DE HISTÓRIA / MEMÓRIASs
 # ==========================================
 @export_category("Story and Memories")
 @export var All_memory_collected_text: String = "Todas as memórias foram recuperadas..."
@@ -22,11 +22,11 @@ signal memory_collected(memory_id: String)
 # ==========================================
 @export_category("Life and combat")
 @export var max_health := 6
-@export var invincibility_duration: float = 1.5 # Tempo de I-Frames (em segundos)
+@export var invincibility_duration: float = 1.5 
 @export var hearth_scene: PackedScene
 
 var current_health: int
-var is_invincible: bool = false # Controla se o jogador pode tomar dano
+var is_invincible: bool = false 
 var collected_memories: Dictionary = {}
 
 # ==========================================
@@ -227,8 +227,7 @@ func _show_final_memory_text() -> void:
 	var final_label = Label.new()
 	final_label.text = All_memory_collected_text
 	
-	# Estiliza o texto (você pode ajustar os tamanhos aqui)
-	final_label.add_theme_color_override("font_color", Color.AQUA) # Exemplo: Cor azulada
+	final_label.add_theme_color_override("font_color", Color.AQUA)
 	final_label.add_theme_font_size_override("font_size", 24)
 	
 	# Centraliza o texto
@@ -247,7 +246,9 @@ func _show_final_memory_text() -> void:
 	text_tween.tween_property(final_label, "position:y", final_label.position.y - 50.0, 4.0).set_ease(Tween.EASE_OUT)
 	text_tween.parallel().tween_property(final_label, "modulate:a", 0.0, 4.0).set_ease(Tween.EASE_IN).set_delay(2.0)
 	text_tween.tween_callback(final_label.queue_free)
+	await get_tree().create_timer(5.0).timeout
+	GameManager.wake_up()
 
 func die() -> void:
 	print("Player morreu!")
-	# get_tree().reload_current_scene()
+	get_tree().call_deferred("reload_current_scene")
