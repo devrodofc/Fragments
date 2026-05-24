@@ -26,7 +26,7 @@ texture = ExtResource("1_iyib4")
 [node name="ParallaxLayer4" type="Parallax2D" parent="ParallaxBackground" unique_id=1553931232]
 scroll_scale = Vector2(0.4, 0.4)
 repeat_size = Vector2(860, 0)
-autoscroll = Vector2(-5, 0)
+autoscroll = Vector2(-20, 0)
 repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" unique_id=1104372642]
@@ -37,7 +37,7 @@ texture = ExtResource("2_c0j7q")
 [node name="ParallaxLayer2" type="Parallax2D" parent="ParallaxBackground" unique_id=1939474914]
 scroll_scale = Vector2(0.5, 0.5)
 repeat_size = Vector2(860, 0)
-autoscroll = Vector2(5, 0)
+autoscroll = Vector2(20, 0)
 repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=286403270]
@@ -48,7 +48,7 @@ texture = ExtResource("3_wn85d")
 [node name="ParallaxLayer3" type="Parallax2D" parent="ParallaxBackground" unique_id=1347989264]
 scroll_scale = Vector2(0.7, 0.7)
 repeat_size = Vector2(860, 0)
-autoscroll = Vector2(-5, 0)
+autoscroll = Vector2(-20, 0)
 repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3" unique_id=1160397051]
@@ -59,7 +59,7 @@ texture = ExtResource("4_4gtcd")
 [node name="ParallaxLayer5" type="Parallax2D" parent="ParallaxBackground" unique_id=111395182]
 scroll_scale = Vector2(0.9, 0.9)
 repeat_size = Vector2(860, 0)
-autoscroll = Vector2(5, 0)
+autoscroll = Vector2(20, 0)
 repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5" unique_id=558614956]
@@ -69,7 +69,7 @@ texture = ExtResource("5_qjhxg")
 
 [node name="ParallaxLayer" type="Parallax2D" parent="ParallaxBackground" unique_id=1907146218]
 repeat_size = Vector2(860, 0)
-autoscroll = Vector2(5, 0)
+autoscroll = Vector2(20, 0)
 repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1530536784]

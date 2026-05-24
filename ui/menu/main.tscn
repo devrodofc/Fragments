@@ -1,0 +1,263 @@
+[gd_scene format=3 uid="uid://cokh5flxhd653"]
+
+[ext_resource type="PackedScene" uid="uid://bu8ask4l5rp2y" path="res://parallax/parallax_menu.tscn" id="1_fw70n"]
+[ext_resource type="Texture2D" uid="uid://b7mq5h2h1xqxi" path="res://assets/sprites/buttons/LongButtons2.png" id="2_phdqp"]
+[ext_resource type="Texture2D" uid="uid://wsvqaiqhnf00" path="res://assets/sprites/buttons/freebuttons2.png" id="3_phdqp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1w8ni"]
+atlas = ExtResource("2_phdqp")
+region = Rect2(33, 19, 14, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgvc5"]
+atlas = ExtResource("2_phdqp")
+region = Rect2(49, 20, 14, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phdqp"]
+atlas = ExtResource("2_phdqp")
+region = Rect2(33, 19, 14, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umvjw"]
+atlas = ExtResource("2_phdqp")
+region = Rect2(49, 20, 14, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6ik4"]
+atlas = ExtResource("2_phdqp")
+region = Rect2(33, 19, 14, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0jig"]
+atlas = ExtResource("2_phdqp")
+region = Rect2(49, 20, 14, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64flu"]
+atlas = ExtResource("2_phdqp")
+region = Rect2(33, 19, 14, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lgir"]
+atlas = ExtResource("2_phdqp")
+region = Rect2(49, 20, 14, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr1i7"]
+atlas = ExtResource("2_phdqp")
+region = Rect2(33, 19, 14, 10)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8bhco"]
+load_path = "res://.godot/imported/LongButtons2.png-52e3f19e1a67b11cfe9ed184eb09f902.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b77nk"]
+atlas = SubResource("CompressedTexture2D_8bhco")
+region = Rect2(49, 20, 14, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22aky"]
+atlas = ExtResource("2_phdqp")
+region = Rect2(33, 19, 14, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xkqk"]
+atlas = ExtResource("2_phdqp")
+region = Rect2(49, 20, 14, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elkq0"]
+atlas = ExtResource("3_phdqp")
+region = Rect2(65, 33, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1eqru"]
+atlas = ExtResource("3_phdqp")
+region = Rect2(81, 34, 14, 13)
+
+[node name="Options" type="Control" unique_id=821320552]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 20.0
+offset_right = -4.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ParallaxMenu" parent="." unique_id=20589860 instance=ExtResource("1_fw70n")]
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=991688534]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=1413197989]
+layout_mode = 2
+
+[node name="BtnStart" type="TextureButton" parent="MarginContainer/VBoxContainer2" unique_id=530441005]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_1w8ni")
+texture_pressed = SubResource("AtlasTexture_wgvc5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer2/BtnStart" unique_id=219915300]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -11.5
+offset_right = 26.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "JOGAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnOpções" type="TextureButton" parent="MarginContainer/VBoxContainer2" unique_id=967054372]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_phdqp")
+texture_pressed = SubResource("AtlasTexture_umvjw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer2/BtnOpções" unique_id=258069931]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.5
+offset_top = -24.5
+offset_right = 38.5
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "OPÇÕES
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnSair" type="TextureButton" parent="MarginContainer/VBoxContainer2" unique_id=290688382]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_n6ik4")
+texture_pressed = SubResource("AtlasTexture_q0jig")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer2/BtnSair" unique_id=711717206]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -11.5
+offset_right = 47.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "SAIR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=521312320]
+layout_mode = 2
+
+[node name="BtnAudio" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=840288787]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_64flu")
+texture_pressed = SubResource("AtlasTexture_1lgir")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/BtnAudio" unique_id=296716009]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -11.5
+offset_right = 26.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "AUDIO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnCreditos" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=1152957749]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_yr1i7")
+texture_pressed = SubResource("AtlasTexture_b77nk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/BtnCreditos" unique_id=1860135844]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.5
+offset_top = -24.5
+offset_right = 38.5
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CREDITOS
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnControles" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=1071281708]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_22aky")
+texture_pressed = SubResource("AtlasTexture_2xkqk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/BtnControles" unique_id=1135431101]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -11.5
+offset_right = 47.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "CONTROLES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnVoltar" type="TextureButton" parent="." unique_id=1966280416]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 25.0
+offset_top = -6.0
+offset_right = 65.0
+offset_bottom = 34.0
+texture_normal = SubResource("AtlasTexture_elkq0")
+texture_pressed = SubResource("AtlasTexture_1eqru")
+ignore_texture_size = true
+stretch_mode = 0
