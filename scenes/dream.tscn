@@ -3,10 +3,18 @@
 [ext_resource type="PackedScene" uid="uid://bn8gtjh2t7yds" path="res://entities/JulioNight/player.tscn" id="1_1rqec"]
 [ext_resource type="PackedScene" uid="uid://yo7ghx1njekx" path="res://Test/platform.tscn" id="2_b68cj"]
 [ext_resource type="PackedScene" uid="uid://7rejwhupagct" path="res://night/Collectable.tscn" id="3_mt4cf"]
-[ext_resource type="Texture2D" uid="uid://d34v0jixype7n" path="res://icon.svg" id="4_jro1w"]
+[ext_resource type="Texture2D" uid="uid://lsik0nhoqdye" path="res://assets/sprites/Pony 5.png" id="4_47r3v"]
+[ext_resource type="Texture2D" uid="uid://bt5f280yjc0mk" path="res://assets/sprites/carta-removebg-preview.png" id="5_47r3v"]
 [ext_resource type="PackedScene" uid="uid://7dpsd6xffu7f" path="res://entities/enemies/Monster1/jumper.tscn" id="5_b68cj"]
+[ext_resource type="Texture2D" uid="uid://c5jp22lbugqol" path="res://assets/sprites/Bola-removebg-preview.png" id="5_j1myf"]
 [ext_resource type="PackedScene" uid="uid://dw3sln8aa6uj2" path="res://entities/enemies/Monster3/phantom.tscn" id="5_jro1w"]
 [ext_resource type="PackedScene" uid="uid://c8ifa2tx1h53" path="res://entities/enemies/Monster2/mouth.tscn" id="7_j1myf"]
+[ext_resource type="Texture2D" uid="uid://jgcw81egkj46" path="res://assets/sprites/3pix128.png" id="7_uddy2"]
+[ext_resource type="Texture2D" uid="uid://khnf64qlf2v3" path="res://assets/sprites/images-removebg-preview.png" id="8_jog6y"]
+[ext_resource type="Texture2D" uid="uid://wjpy1h5pb1ni" path="res://assets/sprites/pipa-removebg-preview.png" id="9_sej5t"]
+[ext_resource type="Texture2D" uid="uid://boypmbo28pr" path="res://assets/sprites/ursinho.png" id="10_8win1"]
+[ext_resource type="Texture2D" uid="uid://j6er0nqj2ls4" path="res://assets/sprites/escorregador.png" id="11_hd16n"]
+[ext_resource type="Texture2D" uid="uid://bslae3f4cnlac" path="res://assets/sprites/cubo-magico.png" id="12_u3fgl"]
 
 [node name="Dream" type="Node2D" unique_id=626537385]
 
@@ -28,65 +36,66 @@ position = Vector2(0, 616)
 scale = Vector2(50, 1)
 
 [node name="Collectable" parent="." unique_id=2102626345 instance=ExtResource("3_mt4cf")]
-position = Vector2(429, 567)
-scale = Vector2(0.4, 0.4)
+position = Vector2(434, 533.00006)
+scale = Vector2(5, 5)
 memory_id = "Carrinho"
-description = "Ele quebrou meu carrinho de brinquedo..."
-memory_icon = ExtResource("4_jro1w")
+description = "Ele quebrou meu cavalo de brinquedo..."
+memory_icon = ExtResource("4_47r3v")
 
 [node name="Collectable2" parent="." unique_id=1850493585 instance=ExtResource("3_mt4cf")]
 position = Vector2(-386, 566)
 scale = Vector2(0.4, 0.4)
 memory_id = "Carta de Amor"
 description = "Ela rasgou minha carta de amor..."
-memory_icon = ExtResource("4_jro1w")
+memory_icon = ExtResource("5_47r3v")
 
 [node name="Collectable3" parent="." unique_id=1784349753 instance=ExtResource("3_mt4cf")]
 position = Vector2(-217, 549)
 memory_id = "Livro de Figurinhas"
-description = "Eles rasgaram minhas figurinhas"
+description = "Eles furaram minhas bola..."
+memory_icon = ExtResource("5_j1myf")
 
 [node name="Collectable4" parent="." unique_id=2084597834 instance=ExtResource("3_mt4cf")]
 position = Vector2(181, 535)
 memory_id = "MemoriaA"
-description = "AA"
+description = "Ele roubou meu carrinho..."
 active_night = 2
+memory_icon = ExtResource("7_uddy2")
 
 [node name="Collectable5" parent="." unique_id=1500076848 instance=ExtResource("3_mt4cf")]
 position = Vector2(347, 540)
 memory_id = "MemoriaC"
-description = "CC"
+description = "Ela quebraram meu controle......"
 active_night = 2
+memory_icon = ExtResource("8_jog6y")
 
 [node name="Collectable7" parent="." unique_id=867845032 instance=ExtResource("3_mt4cf")]
-position = Vector2(347, 540)
+position = Vector2(30, 529)
 memory_id = "MemoriaC"
-description = "CC"
+description = "Eles cortaram minhas pipa..."
 active_night = 2
-
-[node name="Collectable6" parent="." unique_id=221093310 instance=ExtResource("3_mt4cf")]
-position = Vector2(261, 536)
-memory_id = "MemoriaB"
-description = "BB"
-active_night = 2
+memory_icon = ExtResource("9_sej5t")
 
 [node name="Collectable8" parent="." unique_id=1968682223 instance=ExtResource("3_mt4cf")]
 position = Vector2(-124, 544)
 memory_id = "MemoriaB"
-description = "31"
+description = "Você roubou meu ursinho..."
 active_night = 3
+memory_icon = ExtResource("10_8win1")
 
 [node name="Collectable9" parent="." unique_id=1542452772 instance=ExtResource("3_mt4cf")]
 position = Vector2(-182, 545)
 memory_id = "MemoriaB"
-description = "32"
+description = "Eles me empurraram no escurregador no escurregador......"
 active_night = 3
+memory_icon = ExtResource("11_hd16n")
 
 [node name="Collectable10" parent="." unique_id=491931421 instance=ExtResource("3_mt4cf")]
 position = Vector2(-288, 551)
 memory_id = "MemoriaB"
-description = "33"
+description = "Eles desmontaram meu cubo..."
 active_night = 3
+memory_icon = ExtResource("12_u3fgl")
 
 [node name="Enemies_Phantom" type="Node" parent="." unique_id=259408661]
 
