@@ -14,7 +14,7 @@ const BASE_SCENE_PATH: String = "res://scenes/"
 const SCENE_DAY     = "room.tscn"
 const SCENE_NIGHT   = "dream.tscn"
 const SCENE_TITLE   = "TitleScreen.tscn"
-const SCENE_CREDITS = "Creditos.tscn"
+const SCENE_CREDITS = "credits.tscn"
 
 # ─── Sinais ──────────────────────────────────────────────
 signal phase_changed(new_phase: Phase)

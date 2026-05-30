@@ -2,20 +2,22 @@
 
 [ext_resource type="Script" uid="uid://pdceqgapyrpy" path="res://ui/menu/main.gd" id="1_1w8ni"]
 [ext_resource type="PackedScene" uid="uid://bu8ask4l5rp2y" path="res://ui/parallax/parallax_menu.tscn" id="1_fw70n"]
-[ext_resource type="Texture2D" uid="uid://b3fdvh810tmyw" path="res://ui/menu/ui_sprites/png/Button/Rect/Fill/Default.png" id="3_elkq0"]
-[ext_resource type="Texture2D" uid="uid://detaakxp5mtjm" path="res://ui/menu/ui_sprites/png/Button/Rect/Fill/Hover.png" id="4_umvjw"]
-[ext_resource type="Texture2D" uid="uid://bptnl8685h47k" path="res://ui/menu/ui_sprites/png/Buttons/Square/ArrowLeft-Bold/Default.png" id="5_elkq0"]
+[ext_resource type="Texture2D" uid="uid://b3fdvh810tmyw" path="res://assets/sprites/ui/ui_sprites/png/Button/Rect/Fill/Default.png" id="3_elkq0"]
+[ext_resource type="Texture2D" uid="uid://detaakxp5mtjm" path="res://assets/sprites/ui/ui_sprites/png/Button/Rect/Fill/Hover.png" id="4_umvjw"]
+[ext_resource type="Texture2D" uid="uid://bptnl8685h47k" path="res://assets/sprites/ui/ui_sprites/png/Buttons/Square/ArrowLeft-Bold/Default.png" id="5_elkq0"]
 [ext_resource type="FontFile" uid="uid://dwq6aefcd3y06" path="res://assets/resources/pazerat/Pazerat.otf" id="5_umvjw"]
-[ext_resource type="Texture2D" uid="uid://b3b6d5pcu46vh" path="res://ui/menu/ui_sprites/png/Buttons/Square/ArrowLeft-Bold/Hover.png" id="6_umvjw"]
-[ext_resource type="Texture2D" uid="uid://dtvbruyiostef" path="res://ui/menu/ui_sprites/png/Level/Button/Dummy.png" id="7_elkq0"]
+[ext_resource type="Texture2D" uid="uid://b3b6d5pcu46vh" path="res://assets/sprites/ui/ui_sprites/png/Buttons/Square/ArrowLeft-Bold/Hover.png" id="6_umvjw"]
+[ext_resource type="Texture2D" uid="uid://dtvbruyiostef" path="res://assets/sprites/ui/ui_sprites/png/Level/Button/Dummy.png" id="7_elkq0"]
 [ext_resource type="Texture2D" uid="uid://d0wu3qhyufq4d" path="res://assets/sprites/ui/Logo3 - Fragments - Game Jam.png" id="9_n6ik4"]
 [ext_resource type="AudioStream" uid="uid://dflo3bv8c7xxr" path="res://assets/sounds/INTRO A.wav" id="10_q0jig"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q0jig"]
-load_path = "res://.godot/imported/Default.png-b3f95a44317d80239dfcbd29ad3ee641.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0jig"]
+atlas = ExtResource("3_elkq0")
+region = Rect2(0, 0, 196, 84)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_64flu"]
-load_path = "res://.godot/imported/Hover.png-f9fb620cbf76a7391caf611986c7563d.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_64flu"]
+atlas = ExtResource("4_umvjw")
+region = Rect2(0, 0, 196, 84)
 
 [node name="Options" type="Control" unique_id=821320552]
 layout_mode = 3
@@ -208,8 +210,8 @@ metadata/_edit_lock_ = true
 [node name="BtnControls" type="TextureButton" parent="MarginContainer/OptionsBtns" unique_id=1071281708]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
-texture_normal = SubResource("CompressedTexture2D_q0jig")
-texture_pressed = SubResource("CompressedTexture2D_64flu")
+texture_normal = SubResource("AtlasTexture_q0jig")
+texture_pressed = SubResource("AtlasTexture_64flu")
 ignore_texture_size = true
 stretch_mode = 0
 
