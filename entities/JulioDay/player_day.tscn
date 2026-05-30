@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://ccirfc6l853tt" path="res://entities/JulioDay/player_day.gd" id="1_rudke"]
 [ext_resource type="Texture2D" uid="uid://b6qm0y6sdwlue" path="res://assets/sprites/entities/julio/JulioSalve2.png" id="2_06r1i"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rudke"]
-radius = 30.0
-height = 105.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rudke"]
+size = Vector2(57, 105)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8khiq"]
 atlas = ExtResource("2_06r1i")
@@ -107,15 +106,16 @@ collision_mask = 9
 script = ExtResource("1_rudke")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1584017294]
-position = Vector2(1, 3.5)
-shape = SubResource("CapsuleShape2D_rudke")
+position = Vector2(1.5, 6.5)
+shape = SubResource("RectangleShape2D_rudke")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1422487217]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_m6cpk")
-animation = &"idle"
+animation = &"walk_left"
 autoplay = "idle"
-frame_progress = 0.09886683
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=99371270]
 enabled = false
+metadata/_edit_lock_ = true
