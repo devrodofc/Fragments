@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://detaakxp5mtjm" path="res://assets/sprites/ui/ui_sprites/png/Button/Rect/Fill/Hover.png" id="4_trceg"]
 [ext_resource type="FontFile" uid="uid://dwq6aefcd3y06" path="res://assets/resources/pazerat/Pazerat.otf" id="5_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://d0wu3qhyufq4d" path="res://assets/sprites/ui/Logo3 - Fragments - Game Jam.png" id="9_dp3eg"]
-[ext_resource type="AudioStream" uid="uid://dflo3bv8c7xxr" path="res://assets/sounds/INTRO A.wav" id="10_0ld40"]
 
 [node name="Options" type="Control" unique_id=821320552]
 layout_mode = 3
@@ -75,10 +74,6 @@ texture_filter = 3
 position = Vector2(320, 87)
 scale = Vector2(1.5679586, 1.5679585)
 texture = ExtResource("9_dp3eg")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=148392089]
-stream = ExtResource("10_0ld40")
-autoplay = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1694639353]
 position = Vector2(316, 204.99998)

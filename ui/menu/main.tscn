@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://b3b6d5pcu46vh" path="res://assets/sprites/ui/ui_sprites/png/Buttons/Square/ArrowLeft-Bold/Hover.png" id="6_umvjw"]
 [ext_resource type="Texture2D" uid="uid://dtvbruyiostef" path="res://assets/sprites/ui/ui_sprites/png/Level/Button/Dummy.png" id="7_elkq0"]
 [ext_resource type="Texture2D" uid="uid://d0wu3qhyufq4d" path="res://assets/sprites/ui/Logo3 - Fragments - Game Jam.png" id="9_n6ik4"]
-[ext_resource type="AudioStream" uid="uid://dflo3bv8c7xxr" path="res://assets/sounds/INTRO A.wav" id="10_q0jig"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q0jig"]
 atlas = ExtResource("3_elkq0")
@@ -328,10 +327,6 @@ texture_filter = 3
 position = Vector2(320, 87)
 scale = Vector2(1.5679586, 1.5679585)
 texture = ExtResource("9_n6ik4")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=148392089]
-stream = ExtResource("10_q0jig")
-autoplay = true
 
 [connection signal="pressed" from="MarginContainer/MainBtns/BtnStart" to="." method="_on_btn_start_pressed"]
 [connection signal="pressed" from="MarginContainer/MainBtns/BtnOptions" to="." method="_on_btn_options_pressed"]

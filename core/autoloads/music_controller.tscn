@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dlrvwryh2icw1"]
+
+[ext_resource type="AudioStream" uid="uid://dflo3bv8c7xxr" path="res://assets/sounds/INTRO A.wav" id="1_svie5"]
+[ext_resource type="Script" uid="uid://cbryuh0v2w8wu" path="res://core/autoloads/music_controller.gd" id="2_3yndd"]
+[ext_resource type="FontFile" uid="uid://dwq6aefcd3y06" path="res://assets/resources/pazerat/Pazerat.otf" id="3_x5uq2"]
+
+[node name="MusicController" type="AudioStreamPlayer" unique_id=757322993]
+stream = ExtResource("1_svie5")
+script = ExtResource("2_3yndd")
+
+[node name="Label" type="Label" parent="." unique_id=661825066]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -11.5
+offset_right = 26.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.98586935, 0.98586947, 0.98586935, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_x5uq2")
+text = "VOLTAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
